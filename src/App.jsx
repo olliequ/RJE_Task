@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
-import './App.css'
 import Papa from 'papaparse'
-import validateEquipment from './utils/validation/validateEquipment';
-import equipmentMap from './utils/validation/equipmentMap';
+import './App.css'
 import Errors from "./components/Errors"
 import Footer from "./components/Footer"
+import validateEquipment from './utils/validation/validateEquipment';
+import equipmentMap from './utils/validation/equipmentMap';
 
 function App() {
   const [count, setCount] = useState(0)

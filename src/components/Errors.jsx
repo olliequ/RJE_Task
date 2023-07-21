@@ -11,11 +11,11 @@ export default function Errors(props) {
             // style={styles}
             // onClick={props.holdDice}
         >
-            <h1>Error #{props.index+1}</h1>
+            <h1 style={{ 'font-size': '30px', 'text-decoration': 'underline'}}>Error #{props.index+1}</h1>
             <div className="error-values">
-                <h2 className="error-value">Message: {props.message}</h2>
-                <h2 className="error-value">Value: {props.value}</h2>
-                <h2 className="error-value">Line: {props.line}</h2>
+                <h2 className="error-value"><span style={{ color: 'blue' }}>Message:</span> <span style={{ 'font-style': 'italic' }}>{props.message}</span></h2>
+                <h2 className="error-value"><span style={{ color: 'blue' }}>Value:</span> {props.value}</h2>
+                <h2 className="error-value"><span style={{ color: 'blue' }}>Line:</span> {props.line}</h2>
             </div>
         </div>
     )
