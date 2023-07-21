@@ -1,4 +1,3 @@
-// let lineError = require('../models/LineError');
 import lineError from '../models/lineError'
 
 // ------------------ Main Validators -------------------- //
@@ -88,7 +87,7 @@ function validateData(equipmentList, fieldMap, errors) {
             }
             
         }
-        counter ++;
+        counter++;
     }
 }
 

@@ -1,23 +1,46 @@
-# coding-task-2023
-Coding task for RJE Global's software engineering recruitment 2023
+# RJE Global: Coding Task
 
-To run, open the project up in stackblitz, allow it to install dependencies, then type 'node app.js' in the terminal.
+This is my solution for the coding task for RJE Global's software engineering recruitment program (2023).
 
-The project converts the equipment_list.csv file to a json array, validates the contents against a predefined set of validation maps and returns an array of error message json objects to the client.
+I've deployed my solution live here: https://olliequ.github.io/RJE_Task/
 
-Complete the following tasks:
+## Technical Details
 
-1. Extend functionality of the validateColumns() function in validators.js to register a new error if an unknown field is present in the equipment list.
+After completing the 4 questions, I decided to do the bonus task by rewriting the repo in ReactJS for the frontend, and Vite.js for the backend. 
 
-2. Why are all the errors on line 2? Find the bug and fix.
+The build instructions are:
 
-3. Update the validation strings on the "Subsystem" and "PLU" fields so that an error is registerd when an '&' symbol is present.
+```
+$ npm install
+$ npm run dev
+```
 
-4. Add some HTML and CSS to the response object so that the errors list is more human readable.
+In the terminal, the will deploy a localhost instance of the application running on a given port, from which you can see and interact with.
 
-** Feel free to refactor existing code to simplify, make it more readable or to fit in with your solution **
+Below are some screencaps:
 
-Bonus Task:
-Rewrite this program using a front end tech such as Angular, React, or what ever your favourite framework is. This can be a minimal single page where the user clicks a "Validate" button, and the validataoin errors are displayed to the browser window.
+![](./src/assets/1.png)
+![](./src/assets/2.png)
 
-To submit your solution, either send me a link to a new gitub repo, or you can simply zip up the source code and email to taison.eady@rjeglobal.com
+One part of my bonus task solution is a button that displays the detected errors; click the button labeled 'Show Errors' to display them. You can click the button again to hide the errors.
+
+## Questions
+
+Here are my answers to the assigned tasks:
+
+1. ***Extend functionality of the validateColumns() function in validators.js to register a new error if an unknown field is present in the equipment list.***
+
+The crux of my solution is checking if the `field` (column name) is in the `equipmentMap` or not. If it's not, then an error should be thrown!
+
+2. ***Why are all the errors on line 2? Find the bug and fix.***
+
+This was due to scoping issues with the `counter` variable. Moving the initalized variable up a level meant its state was preserved (i.e. `counter++` is remembered.). Changes for this had to be made in both `validateData()` and `validateUniqueKeys()`.
+
+3. ***Update the validation strings on the "Subsystem" and "PLU" fields so that an error is registerd when an '&' symbol is present.***
+
+My solution involved writing a regex pattern to test for the presence of `&`, and assigning it to the "Subsystem" and "PLU" fields. Specifically, my solution is: `/^[^&]+$/`.
+
+4. - ***Add some HTML and CSS to the response object so that the errors list is more human readable***
+   - ***Rewrite this program using a front end technology.***
+
+I completed the bonus task! To make the codebase React compatible, I did a *lot* of refactoring. But, it was worth in the end because now I have a beautiful interface!

@@ -1,5 +1,3 @@
-// Literally an export of a hashmap. 
-
 let project = /\b\d{4}\b/;
 let notEmpty = /^.{1,255}$/;
 let ampersand = /^[^&]+$/;
@@ -24,8 +22,3 @@ equipmentMap.set('Drawings', { colIndex: null, isRequired: false, validationStri
 equipmentMap.set('Docnumber', { colIndex: null, isRequired: false, validationString: notEmpty, uniqueKeyID: null, maxLength: 255 })
 
 export default equipmentMap;
-
-// module.exports = {
-//     equipmentMap
-// }
-

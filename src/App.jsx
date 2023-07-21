@@ -51,10 +51,9 @@ function App() {
         </button>
       </div>
 
-      
       {showErrors && <div className="errors-container">{errorElements}</div>}
-      <Footer />
       
+      <Footer />
     </div>
   )
 }

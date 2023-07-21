@@ -6,5 +6,4 @@ class lineError {
     }
 }
 
-// module.exports = LineError
 export default lineError;
